@@ -30,17 +30,25 @@ var users = [
     }
 ];
 function getUsers() {
-    var output = ""
+    var output = "";
+    for (var i = 0; i < users.length; i++) {
+		output += `${users[i].id} - ${users[i].firstName} ${users[i].lastName} is ${users[i].age}, ${users[i].gender}\n`;
+	}
     return output;
 }
 function findUserById(id) {
-    try {
-
-    } catch (error) {
-        return;
-        console.log();
+    try {var user = _.find(users, (obj) => {
+        if (obj.id === id) {
+            return true;
+        }
+        });
+        var iFindUser = `${user.id} - ${user.firstName} ${user.lastName} is ${user.age}, ${user.gender}`;
+        return iFindUser;
+        } catch (error) {
+        return "Cannot read property 'id'";
+        console.log(iFindUser);
     }
 }
 getUsers();
-findUserById();
+findUserById(1);
 module.exports = findUserById;

@@ -4,7 +4,7 @@ const MY_CAR = {
     size: 2.2
 };
 function main(myCar) {
-    const { cylinders: carCylinders, size: carSize } = MY_CAR;
+    const { cylinders: carCylinders, size: carSize } = myCar;
     return { carCylinders, carSize };
 }
 console.log(main(MY_CAR));
